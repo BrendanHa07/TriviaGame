@@ -1,7 +1,7 @@
 var questions = [{
 	question: "Who's house sigil is" + "</br>" + "<img src='assets/images/greyjoy.png' height='200px' width='200px'>",
 	choices: ["<h4 class='correct'>House Greyjoy</h4>","<h4 class='wrong'>House Karstark</h4>","<h4 class='wrong'>House Umber</h4>","<h4 class='wrong'>House Tyrell</h4>"],
-	correctAnswer: "House Greyjoy" 
+	correctAnswer: "House Greyjoy" + "</br>" + "<img src='assets/images/theon.gif'>"
 }, {
 	question:"What song was played to initiate the Red Wedding?",
 	choices:  ["<h4 class='wrong'>The Dornishman's Wife</h4>","<h4 class='correct'>The Rains of Castamere</h4>","<h4 class='wrong'>The Bear and the Maiden Fair</h4>","<h4 class='wrong'>Gentle Mother, Font of Mercy</h4>"],
@@ -36,16 +36,18 @@ var questions = [{
 	correctAnswer: "Wildfire" + "</br>" + "<img src='assets/images/sept.gif'>"
 }, {
 	question:"Who said, 'You know nothing, Jon Snow' ?",
-	choices:  ["<h4 class='wrong'>Sansa Stark</h4>","<h4 class='wrong'>Tyrin Lannister</h4>","<h4 class='wrong'>Roose Bolton</h4>","<h4 class='correct'>Ygritte</h4>"],
+	choices:  ["<h4 class='wrong'>Sansa Stark</h4>","<h4 class='wrong'>Tyri0n Lannister</h4>","<h4 class='wrong'>Roose Bolton</h4>","<h4 class='correct'>Ygritte</h4>"],
 	correctAnswer: "Ygritte" + "</br>" + "<img src='assets/images/ygritte.gif'>"
 }];
 
 
-var number = 10;
+var number = 30;
 var questionCounter = 0;
 var wrongCount = 0;
 var correctCount = 0;
 var setInterval;
+
+
 
 $(document).ready(function(){
 
@@ -54,9 +56,11 @@ $(document).ready(function(){
 
 
           function playGame(){
+          	$("#results").empty();
             $("#start").hide(); 
             $("#answer").empty(); 
             if (questionCounter > 9) {
+            	$("#timer").html("<h4>Game Over</h>");
           		$("#results").html("<h2> You got " + correctCount + " questions correct!");
           		return;   
           	}       
@@ -65,7 +69,6 @@ $(document).ready(function(){
             $(".correct").on("click", RC);
     		$("#timer").html("<h4>Time remaining: " + number + "</h4>");
     		$("#question").html("<h4>Question: </h4>" + questions[questionCounter].question);
-
           }
 
           function choice(){
@@ -78,21 +81,24 @@ $(document).ready(function(){
           function WC(){
             wrongCount++;
             answerPage();
+            $("#results").html("<h2>You are wrong!</h2>");
           }
 
           function RC(){
-            correctCount++;  
+            correctCount++; 
             answerPage();
+            $("#results").html("<h2>You are correct!</h2>")
           }          
 
           function answerPage(){
+          	$("#question").empty();
             $("#choice").empty();
             $("#timer").empty();
             $("#answer").html("<h4>Correct Answer:</h4>" + questions[questionCounter].correctAnswer);
             questionCounter++;
             stop();
 
-            number = 10;   
+            number = 30;   
             setTimeout(playGame,3000);
             setTimeout(run,3000);
           }
@@ -109,9 +115,8 @@ $(document).ready(function(){
             if (number === -1) { 
               answerPage();
               }
-            else if (questionCounter === 10) {
+            else if (questionCounter > 9) {
               $("#question").empty();
-              $("#timer").html("<h4>Game Over</h>");
               stop();
             }              
           }
