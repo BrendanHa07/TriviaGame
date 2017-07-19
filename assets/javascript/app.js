@@ -60,7 +60,6 @@ $(document).ready(function(){
             $("#start").hide(); 
             $("#answer").empty(); 
             if (questionCounter > 9) {
-            	$("#timer").html("<h4>Game Over</h>");
           		$("#results").html("<h2> You got " + correctCount + " questions correct!");
           		return;   
           	}       
@@ -117,6 +116,7 @@ $(document).ready(function(){
               }
             else if (questionCounter > 9) {
               $("#question").empty();
+              $("#timer").html("<h4>Game Over</h>");
               stop();
             }              
           }
