@@ -8,36 +8,36 @@
 </head>
 <body>
 
-<div class="container" id="playField">
+<div class="container">
 	<div class="jumbotron">
 		<div class="container">
 			<div class="row" id="header">
-				<img src="assets/images/silverlogo.png"><h1 id="trivia">Trivia</h1>
+				<img class="logo" src="assets/images/silverlogo.png"><h1 id="trivia">Trivia</h1>
 				<div class="mainArea col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2"></div>
 			</div>
 		</div>
 	</div>
 
-	<div class="container" style="text-align:center">
+	<div class="container" id="playField" style="text-align:center">
 		<button id="start" type="button" class="btn btn-primary">Winter is Coming</button>
-	</div>
+			<div id="setup">
+				<div id="timer"></div>
 
-	<div id="gameField" style="text-align:center">
-		<div id="setup">
-			<div id="timer"></div>
+				<div id="question"></div>
 
-			<div id="question"></div>
+				<div id="results"></div>
 
-			<div id="results"></div>
+				<div id="choice"></div>
 
-			<div id="choice"></div>
-
-			<div id="answer"></div>
-
-			
+				<div id="answer"></div>	
 		</div>
-	</div>
+	</div>		
 </div>
+
+<footer class="fixed-bottom">
+	<p style="margin-bottom:0px">Developed and designed by Brendan Ha 2017</p>
+	<p>&copy;Brendan Ha 2017</p>
+ </footer>
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

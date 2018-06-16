@@ -52,7 +52,7 @@ var setInterval;
 $(document).ready(function(){
 
 	$("#start").on("click", playGame);
-    $("#start").on("click", run);
+  $("#start").on("click", run);
 
 
           function playGame(){
@@ -60,7 +60,7 @@ $(document).ready(function(){
             $("#start").hide(); 
             $("#answer").empty(); 
             if (questionCounter > 9) {
-          		$("#results").html("<h2> You got " + correctCount + " questions correct!");
+              $("#results").html("<h2> You got " + correctCount + " questions correct!");
           		return;   
           	}       
             choice();
@@ -71,10 +71,10 @@ $(document).ready(function(){
           }
 
           function choice(){
-            $("#choice").append("<li>" + questions[questionCounter].choices[0] + "</li>");
-            $("#choice").append("<li>" + questions[questionCounter].choices[1] + "</li>");              
-            $("#choice").append("<li>" + questions[questionCounter].choices[2] + "</li>");              
-            $("#choice").append("<li>" + questions[questionCounter].choices[3] + "</li>");              
+            $("#choice").append( questions[questionCounter].choices[0]);
+            $("#choice").append( questions[questionCounter].choices[1]);              
+            $("#choice").append( questions[questionCounter].choices[2]);              
+            $("#choice").append( questions[questionCounter].choices[3]);              
           }
 
           function WC(){
@@ -86,7 +86,7 @@ $(document).ready(function(){
           function RC(){
             correctCount++; 
             answerPage();
-            $("#results").html("<h2>You are correct!</h2>")
+            $("#results").html("<h1>You are correct!</h1>")
           }          
 
           function answerPage(){
@@ -119,8 +119,5 @@ $(document).ready(function(){
               $("#timer").html("<h4>Game Over</h>");
               stop();
             }              
-          }
-
-
-			
+          }			
 });

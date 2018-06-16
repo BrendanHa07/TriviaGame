@@ -1,12 +1,47 @@
-body {
+html, body {
 	font-family: 'Cinzel', serif;
 	background-image: url(../images/background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 	color: white;
+	height: 100%;
 }
 
 .jumbotron {
 	background-color: transparent !important;
-	color: #d8d1cd;
+	color: #ffffff;
+}
+
+.logo{
+	position: relative;
+}
+
+#playField {
+	box-sizing: border-box;
+	padding-bottom: 25px;
+	height: 80%;
+	width: 100%;
+}
+
+#trivia {
+	position: absolute;
+	top: 145px;
+	right: 380px;
+	width: 200px;
+	height: 100px;
+}
+
+#choice {
+	padding-top: 10px;
+}
+
+#question {
+	font-size: 25px;
+}
+
+.correct,
+.wrong:hover {
+	cursor: pointer;
 }
 
 #header {
@@ -17,5 +52,13 @@ body {
 	align-items: center;
 	font-size: 24px;
 	background-color: #8B0000;
-};
+	margin-top: 100px;
+}
+
+footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	padding-left: 15px;
+}
 
